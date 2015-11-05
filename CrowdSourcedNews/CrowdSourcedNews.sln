@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdSourcedNews.Models", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdSourcedNews.Data", "Data\CrowdSourcedNews.Data\CrowdSourcedNews.Data.csproj", "{D17AAAB0-1C53-44F4-9824-8927C208B0A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BF37B9A9-3BAF-4A1A-9493-C30AD1A9D0CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdSourcedNews.Data.Services", "Services\CrowdSourcedNews.Data.Services\CrowdSourcedNews.Data.Services.csproj", "{015B09AB-4ED8-485C-ADCD-849C23231CF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{D17AAAB0-1C53-44F4-9824-8927C208B0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D17AAAB0-1C53-44F4-9824-8927C208B0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D17AAAB0-1C53-44F4-9824-8927C208B0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015B09AB-4ED8-485C-ADCD-849C23231CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015B09AB-4ED8-485C-ADCD-849C23231CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015B09AB-4ED8-485C-ADCD-849C23231CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015B09AB-4ED8-485C-ADCD-849C23231CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +47,6 @@ Global
 		{519B347E-C2DA-464F-8147-D551AEAE39E3} = {3659FBF1-1D42-4C24-87E2-711485A92781}
 		{C4C05D31-7DD3-48E1-A951-7F528E151333} = {6BC0811C-C457-40C9-B662-2977ED54FD41}
 		{D17AAAB0-1C53-44F4-9824-8927C208B0A6} = {6BC0811C-C457-40C9-B662-2977ED54FD41}
+		{015B09AB-4ED8-485C-ADCD-849C23231CF3} = {BF37B9A9-3BAF-4A1A-9493-C30AD1A9D0CB}
 	EndGlobalSection
 EndGlobal

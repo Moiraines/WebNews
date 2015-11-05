@@ -176,7 +176,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\NewsArticlesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,6 +205,10 @@
     <ProjectReference Include="..\..\Data\CrowdSourcedNews.Models\CrowdSourcedNews.Models.csproj">
       <Project>{c4c05d31-7dd3-48e1-a951-7f528e151333}</Project>
       <Name>CrowdSourcedNews.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\CrowdSourcedNews.Data.Services\CrowdSourcedNews.Data.Services.csproj">
+      <Project>{015b09ab-4ed8-485c-adcd-849c23231cf3}</Project>
+      <Name>CrowdSourcedNews.Data.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
