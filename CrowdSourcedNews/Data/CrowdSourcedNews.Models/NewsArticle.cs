@@ -1,5 +1,6 @@
 ﻿namespace CrowdSourcedNews.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -22,6 +23,8 @@
 
         [Required]
         public string Content { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         [Required]
         public string AuthorId { get; set; }
