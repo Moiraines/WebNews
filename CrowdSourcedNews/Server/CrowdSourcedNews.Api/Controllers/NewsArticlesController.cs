@@ -3,8 +3,12 @@
     using System.Linq;
     using System.Web.Http;
 
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
+
     using CrowdSourcedNews.Api.Models.NewsArticle;
     using CrowdSourcedNews.Data.Services.Contracts;
+    using CrowdSourcedNews.Models;
 
     public class NewsArticlesController : ApiController
     {
@@ -20,15 +24,8 @@
             var result = this.newsArticles
                 .All()
                 .OrderByDescending(ar => ar.CreatedOn)
-                .Select(ar => new NewsArticleResponseModel
-                {
-                    Name = ar.Name,
-                    Author = ar.Author.UserName,
-                    Comments = ar.Comments,
-                    Content = ar.Content,
-                    CreatedOn = ar.CreatedOn,
-                    Images = ar.Images
-                }).ToList();
+                .ProjectTo<NewsArticleResponseModel>()
+               .ToList();
 
             if (result.Count == 0)
             {
@@ -40,15 +37,10 @@
 
         public IHttpActionResult Get(int id)
         {
-            var result = this.newsArticles.All().Where(ar => ar.Id == id).Select(ar => new NewsArticleResponseModel
-            {
-                Name = ar.Name,
-                Author = ar.Author.UserName,
-                Comments = ar.Comments,
-                Content = ar.Content,
-                CreatedOn = ar.CreatedOn,
-                Images = ar.Images
-            }).FirstOrDefault();
+            var result = this.newsArticles.All()
+                .Where(ar => ar.Id == id)
+                .ProjectTo<NewsArticleResponseModel>()
+                .FirstOrDefault();
 
             if (result == null)
             {
@@ -66,7 +58,9 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var newArticleId = this.newsArticles.Add(model.Name, model.Content, this.User.Identity.Name);
+            var dataModel = Mapper.Map<NewsArticle>(model);
+
+            var newArticleId = this.newsArticles.Add(dataModel, this.User.Identity.Name);
 
             return this.Ok(newArticleId);
         }
