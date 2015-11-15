@@ -2,12 +2,14 @@
 {
     using System;
     using System.Linq;
+
     using CrowdSourcedNews.Data.Services.Contracts;
-    using Models;
+    using CrowdSourcedNews.Models;
 
     public class NewsArticlesService : INewsArticlesService
     {
         private readonly IRepository<NewsArticle> newsArticles;
+
         private readonly IRepository<User> users;
 
         public NewsArticlesService(IRepository<NewsArticle> newsArticleRepository, IRepository<User> usersRepository)
@@ -18,17 +20,14 @@
 
         public IQueryable<NewsArticle> All()
         {
-            var result = this.newsArticles
-                .All();
+            var result = this.newsArticles.All();
 
             return result;
         }
 
         public int Add(string name, string content, string author)
         {
-            var currentUser = this.users
-                .All()
-                .FirstOrDefault(u => u.UserName == author);
+            var currentUser = this.users.All().FirstOrDefault(u => u.UserName == author);
 
             if (currentUser == null)
             {
@@ -36,13 +35,13 @@
             }
 
             var newArticle = new NewsArticle
-            {
-                Name = name,
-                Content = content,
-                CreatedOn = DateTime.Now
-            };
+                                 {
+                                     Name = name,
+                                     Content = content,
+                                     CreatedOn = DateTime.Now,
+                                     Author = currentUser
+                                 };
 
-            newArticle.Author =currentUser;
 
             this.newsArticles.Add(newArticle);
             this.newsArticles.SaveChanges();

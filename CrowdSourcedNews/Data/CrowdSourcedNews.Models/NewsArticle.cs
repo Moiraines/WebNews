@@ -22,6 +22,7 @@
         public string Name { get; set; }
 
         [Required]
+        [MaxLength(100000)]
         public string Content { get; set; }
 
         public DateTime CreatedOn { get; set; }

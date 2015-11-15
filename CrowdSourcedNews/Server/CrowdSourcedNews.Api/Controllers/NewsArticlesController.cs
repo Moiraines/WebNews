@@ -17,7 +17,18 @@
 
         public IHttpActionResult Get()
         {
-            var result = this.newsArticles.All().ToList();
+            var result = this.newsArticles
+                .All()
+                .OrderByDescending(ar => ar.CreatedOn)
+                .Select(ar => new NewsArticleResponseModel
+                {
+                    Name = ar.Name,
+                    Author = ar.Author.UserName,
+                    Comments = ar.Comments,
+                    Content = ar.Content,
+                    CreatedOn = ar.CreatedOn,
+                    Images = ar.Images
+                }).ToList();
 
             if (result.Count == 0)
             {
@@ -29,7 +40,15 @@
 
         public IHttpActionResult Get(int id)
         {
-            var result = this.newsArticles.All().FirstOrDefault(ar => ar.Id == id);
+            var result = this.newsArticles.All().Where(ar => ar.Id == id).Select(ar => new NewsArticleResponseModel
+            {
+                Name = ar.Name,
+                Author = ar.Author.UserName,
+                Comments = ar.Comments,
+                Content = ar.Content,
+                CreatedOn = ar.CreatedOn,
+                Images = ar.Images
+            }).FirstOrDefault();
 
             if (result == null)
             {
