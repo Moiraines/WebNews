@@ -7,6 +7,6 @@
     {
         IQueryable<NewsArticle> All();
 
-        int Add(string name, string content, string author);
+        int Add(NewsArticle model, string username);
     }
 }

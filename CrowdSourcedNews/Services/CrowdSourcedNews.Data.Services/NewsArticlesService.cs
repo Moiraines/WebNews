@@ -25,28 +25,21 @@
             return result;
         }
 
-        public int Add(string name, string content, string author)
+        public int Add(NewsArticle model, string username)
         {
-            var currentUser = this.users.All().FirstOrDefault(u => u.UserName == author);
+            var currentUser = this.users.All().FirstOrDefault(u => u.UserName == username);
 
             if (currentUser == null)
             {
                 throw new ArgumentException("Current user cannot be found!");
             }
 
-            var newArticle = new NewsArticle
-                                 {
-                                     Name = name,
-                                     Content = content,
-                                     CreatedOn = DateTime.Now,
-                                     Author = currentUser
-                                 };
+            model.Author = currentUser;
 
-
-            this.newsArticles.Add(newArticle);
+            this.newsArticles.Add(model);
             this.newsArticles.SaveChanges();
 
-            return newArticle.Id;
+            return model.Id;
         }
     }
 }
