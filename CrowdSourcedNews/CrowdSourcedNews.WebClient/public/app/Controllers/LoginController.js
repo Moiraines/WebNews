@@ -8,7 +8,7 @@
             localStorage.setItem('token', response.data.access_token);
             toastr.success('You have successfully logged in!');
         }, function (err) {
-            toastr.error(err);
+            toastr.error(err.data.error_description);
         })
     }
 })
