@@ -5,9 +5,9 @@
     $scope.register = function () {
 
         RegisterProvider.register($scope.user).then(function (response) {
-            console.log(response);
+            toastr.success('You have successfully registered!');
         }, function (err) {
-            console.log(err);
+            toastr.error(err);
         })
     }
 })

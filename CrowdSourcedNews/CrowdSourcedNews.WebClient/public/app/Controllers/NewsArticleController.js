@@ -5,9 +5,9 @@
     $scope.add = function () {
 
         NewsArticleProvider.add($scope.data).then(function (response) {
-            console.log(response.data);
+            toastr.success('You have successfully added a news article!');
         }, function (err) {
-            console.log(err);
+            toastr.error(err);
         })
     }
 })

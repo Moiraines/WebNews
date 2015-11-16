@@ -6,8 +6,9 @@
 
         LoginProvider.login($scope.loginData).then(function (response) {
             localStorage.setItem('token', response.data.access_token);
+            toastr.success('You have successfully logged in!');
         }, function (err) {
-            console.log(err);
+            toastr.error(err);
         })
     }
 })
