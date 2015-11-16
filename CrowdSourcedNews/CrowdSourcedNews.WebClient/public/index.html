@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crowd Sourced News</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body ng-app="CrowdSourcedNews">
+    <nav class="navbar navbar-custom ">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form">
+                    <div class="form-group pull-left">
+                        <h1 style="color: lightgreen;">Crowd Sourced News</h1>
+                        <a href="#/Home" class="col-sm-4">Home</a>
+                        <a href="#/NewsArticles" class="col-sm-4">News Articles</a>
+                    </div>
+                    <div class="form-group pull-right">
+                        <h3 id="hi-there" style="color: lightgreen;"></h3>
+                    </div>
+                    <div class="form-group pull-right">
+                        <a href="#/Login" id="loginbar" class="col-sm-6">LogIn</a>
+                        <a href="#/Register" id="registerbar" class="col-sm-5">Register</a>
+                        <a href="#/Logout" id="logoutbar" class="col-sm-5" style="display: none">LogOut</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <hr />
+    <div ng-view>
+        
+    </div>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/Providers/RegisterProvider.js"></script>
+    <script src="app/Controllers/RegisterController.js"></script>
+    <script src="app/Providers/LoginProvider.js"></script>
+    <script src="app/Controllers/LoginController.js"></script>
+    <script src="app/Providers/NewsArticleProvider.js"></script>
+    <script src="app/Controllers/NewsArticleController.js"></script>
+</body>
+</html>

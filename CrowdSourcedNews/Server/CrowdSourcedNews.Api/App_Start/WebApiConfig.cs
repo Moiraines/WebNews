@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.Cors;
 
 namespace CrowdSourcedNews.Api
 {
@@ -12,6 +13,9 @@ namespace CrowdSourcedNews.Api
     {
         public static void Register(HttpConfiguration config)
         {
+            var corsAttribut = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(corsAttribut);
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
