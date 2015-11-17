@@ -35,6 +35,21 @@
             return this.Ok(result);
         }
 
+        public IHttpActionResult Get(string category)
+        {
+            var result = this.newsArticles
+                .All()
+                .Where(a => a.Category.ToLower() == category.ToLower())
+                .ToList();
+
+            if (result.Count == 0)
+            {
+                return this.NotFound();
+            }
+
+            return this.Ok(result);
+        }
+
         public IHttpActionResult Get(int id)
         {
             var result = this.newsArticles.All()

@@ -71,7 +71,9 @@
     <Content Include="bower.json" />
     <Content Include="public\app\Controllers\MainController.js" />
     <Content Include="public\app\Controllers\LoggedController.js" />
+    <Content Include="public\app\Controllers\NewsArticlesController.js" />
     <Content Include="public\app\Providers\LoggedProvider.js" />
+    <Content Include="public\app\Providers\NewsArticlesProvider.js" />
     <Content Include="public\app\Templates\AddNewsArticleTemplate.html" />
     <Content Include="public\app\Templates\ContactsTemplate.html" />
     <Content Include="public\app\Templates\LoggedTemplate.html" />

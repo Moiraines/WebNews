@@ -25,6 +25,8 @@
         [MaxLength(100000)]
         public string Content { get; set; }
 
+        public string Category { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         [Required]

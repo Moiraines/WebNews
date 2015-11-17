@@ -22,7 +22,7 @@ angular
             })
             .when('/NewsArticles', {
                 templateUrl: '/app/Templates/NewsArticleTemplate.html',
-                //controller: 'NewsArticleController'
+                controller: 'NewsArticlesController'
             })
             .when('/Logged', {
                 templateUrl: '/app/Templates/LoggedTemplate.html',

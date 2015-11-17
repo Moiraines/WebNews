@@ -16,6 +16,8 @@
         [MaxLength(100000)]
         public string Content { get; set; }
 
+        public string Category { get; set; }
+
         public void CreateMappings(IConfiguration config)
         {
             config.CreateMap<NewsArticleRequestModel, NewsArticle>().ForMember(p => p.CreatedOn, opts => opts.UseValue(DateTime.Now));
