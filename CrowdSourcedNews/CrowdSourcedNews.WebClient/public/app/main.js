@@ -6,7 +6,7 @@ angular
                 templateUrl: '/app/Templates/HomeTemplate.html',
             })
             .when('/Home', {
-                templateUrl: '/app/Templates/HomeTemplate.html',
+                templateUrl: '/app/Templates/HomeTemplate.html'
             })
             .when('/Login', {
                 templateUrl: '/app/Templates/LoginTemplate.html',
@@ -16,9 +16,24 @@ angular
                 templateUrl: '/app/Templates/RegisterTemplate.html',
                 controller: 'RegisterController'
             })
+            .when('/AddNewsArticles', {
+                templateUrl: '/app/Templates/AddNewsArticleTemplate.html',
+                controller: 'AddNewsArticleController'
+            })
             .when('/NewsArticles', {
                 templateUrl: '/app/Templates/NewsArticleTemplate.html',
-                controller: 'NewsArticleController'
+                //controller: 'NewsArticleController'
+            })
+            .when('/Logged', {
+                templateUrl: '/app/Templates/LoggedTemplate.html',
+                controller: 'LoggedController'
+            })
+            .when('/AddArticle', {
+                templateUrl: '/app/Templates/AddNewsArticleTemplate.html',
+                //controller: 'LoggedController'
+            })
+            .when('/Contacts', {
+                templateUrl: '/app/Templates/ContactsTemplate.html',
             })
     })
 

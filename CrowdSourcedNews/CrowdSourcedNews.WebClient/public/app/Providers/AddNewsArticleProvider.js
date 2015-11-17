@@ -1,4 +1,4 @@
-﻿angular.module('CrowdSourcedNews').factory('NewsArticleProvider', function ($http, $q) {
+﻿angular.module('CrowdSourcedNews').factory('AddNewsArticleProvider', function ($http, $q) {
 
     var url = 'http://localhost:61701/api/NewsArticles';
 

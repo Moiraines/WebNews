@@ -2,6 +2,11 @@
     <div class="row empty"></div>
     <div class="row">
         <div class="col-md-0"></div>
+        <div id="greeting" class="col-md-3">
+            <h2 class="h2" style="color: #00b3ee">
+                Hello, <span id="greeting-span">{{loggedUser}}</span>
+            </h2>
+        </div>
         <div class="col-md-9"></div>
     </div>
     <div class="row" style="height: 220px;">
@@ -12,6 +17,7 @@
             <div class="container-fluid">
                 <label for="category-options">Choose category:</label>
                 <select class="form-control" id="category-options"></select>
+                <a href="#" class="btn btn-info" id="add-more-videos">Add article</a>
                 <a href="#" class="btn btn-success" id="show-form-btn">Show</a>
             </div>
         </div>
@@ -20,7 +26,7 @@
 
     </div>
     <div class="row">
-        <h2 class="h2">Articles:</h2>
+        <h2 class="h2">My Articles:</h2>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
@@ -28,3 +34,5 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+<script src="controllers/loggedController.js"></script>
+<script src="scripts/showAddVideo.js"></script>

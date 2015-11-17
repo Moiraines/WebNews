@@ -6,7 +6,7 @@
     <link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="libs/toastr/toastr.css">
 </head>
-<body ng-app="CrowdSourcedNews">
+<body ng-app="CrowdSourcedNews" ng-controller="MainController">
     <nav class="navbar navbar-custom ">
         <div class="container-fluid">
 
@@ -14,16 +14,20 @@
                 <form class="navbar-form">
                     <div class="form-group pull-left">
                         <h1 style="color: lightgreen;">Crowd Sourced News</h1>
-                        <a href="#/Home" class="col-sm-4">Home</a>
-                        <a href="#/NewsArticles" class="col-sm-4">News Articles</a>
+                        <a href="#/Home" class="col-sm-3">Home</a>
+                        <a href="#/NewsArticles" class="col-sm-3">News Articles</a>
+                        <a href="#/AddNewsArticles" id="addnewsarticlesbar" class="col-sm-3">Add Article</a>
+                        <a href="#/Contacts" class="col-sm-3">Contacts</a>
+
                     </div>
                     <div class="form-group pull-right">
                         <h3 id="hi-there" style="color: lightgreen;"></h3>
                     </div>
                     <div class="form-group pull-right">
-                        <a href="#/Login" id="loginbar" class="col-sm-6">LogIn</a>
+                        <a href="#/Login" id="loginbar" class="col-sm-6">Login</a>
                         <a href="#/Register" id="registerbar" class="col-sm-5">Register</a>
-                        <a href="#/Logout" id="logoutbar" class="col-sm-5" style="display: none">LogOut</a>
+                        <a href="#/Logged" id="loggedbar" class="col-sm-6">{{loggedUser}}</a>
+                        <a href="#/Home" id="logoutbar" class="col-sm-5" ng-click="logout()">Logout</a>
                     </div>
                 </form>
             </div>
@@ -43,7 +47,9 @@
     <script src="app/Controllers/RegisterController.js"></script>
     <script src="app/Providers/LoginProvider.js"></script>
     <script src="app/Controllers/LoginController.js"></script>
-    <script src="app/Providers/NewsArticleProvider.js"></script>
-    <script src="app/Controllers/NewsArticleController.js"></script>
+    <script src="app/Providers/AddNewsArticleProvider.js"></script>
+    <script src="app/Controllers/AddNewsArticleController.js"></script>
+    <script src="app/Controllers/LoggedController.js"></script>
+    <script src="app/Controllers/MainController.js"></script>
 </body>
 </html>
