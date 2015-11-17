@@ -106,7 +106,6 @@ namespace CrowdSourcedNews.Api.Providers
 
         public static IList<File> GetFiles(DriveService service, string search)
         {
-
             IList<File> Files = new List<File>();
 
             try

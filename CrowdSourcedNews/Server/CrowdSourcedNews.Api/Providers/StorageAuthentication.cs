@@ -2,16 +2,32 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using CrowdSourcedNews.Api.Models.Storage;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v2;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Newtonsoft.Json.Linq;
 
 namespace CrowdSourcedNews.Api.Providers
 {
 
     public class StorageAuthentication
     {
+        private const string Path = "../../../client_secret.json"; // File with credentials provided by Google for developer console authentication
+
+        public static StorageClient GetUserCredentials()
+        {
+            string content = File.ReadAllText(Path);
+            JObject json = JObject.Parse(content);
+            var storageClient = new StorageClient
+            {
+                ClientId = (string)json["installed"]["client_id"],
+                ClientSecret = (string)json["installed"]["client_secret"]
+            };
+
+            return storageClient;
+        }
 
         public static DriveService AuthenticateOauth(string clientId, string clientSecret, string userName) // removed the windows username of the currently logged user
         {
