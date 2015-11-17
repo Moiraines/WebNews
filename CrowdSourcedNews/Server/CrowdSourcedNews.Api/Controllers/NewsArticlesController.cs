@@ -2,13 +2,13 @@
 {
     using System.Linq;
     using System.Web.Http;
-
     using AutoMapper;
     using AutoMapper.QueryableExtensions;
-
     using CrowdSourcedNews.Api.Models.NewsArticle;
     using CrowdSourcedNews.Data.Services.Contracts;
     using CrowdSourcedNews.Models;
+    using Google.Apis.Drive.v2;
+    using Providers;
 
     public class NewsArticlesController : ApiController
     {
@@ -72,6 +72,25 @@
             {
                 return this.BadRequest(this.ModelState);
             }
+
+            var client = StorageAuthentication.GetUserCredentials();
+            DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
+
+            var imagesCollection = model.Images;
+
+            // the case when image files are uploaded and saved on server hdd (Article should be referenced)
+            //foreach (var image in imagesCollection)
+            //{
+            //    var upload = StorageOperation.UploadFile(service, image.Name, StorageOperation.ParentFolder);
+            //    image.Url = string.Format("https://drive.google.com/uc?id={0}", upload.Id);
+            //}
+
+            // the case when image files are byte arrays
+            //foreach (var image in imagesCollection)
+            //{
+            //    var upload = StorageOperation.UploadFile(service, new byte[100], StorageOperation.ParentFolder);
+            //    image.Url = string.Format("https://drive.google.com/uc?id={0}", upload.Id);
+            //}
 
             var dataModel = Mapper.Map<NewsArticle>(model);
 

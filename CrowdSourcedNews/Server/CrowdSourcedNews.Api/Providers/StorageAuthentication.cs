@@ -14,7 +14,7 @@ namespace CrowdSourcedNews.Api.Providers
 
     public class StorageAuthentication
     {
-        private const string Path = "../../../client_secret.json"; // File with credentials provided by Google for developer console authentication
+        private const string Path = "../../StorageCredentials/client_secret.json"; // File with credentials provided by Google for developer console authentication
 
         public static StorageClient GetUserCredentials()
         {

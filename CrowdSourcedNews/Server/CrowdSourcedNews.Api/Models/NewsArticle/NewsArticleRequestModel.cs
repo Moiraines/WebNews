@@ -1,6 +1,7 @@
 ﻿namespace CrowdSourcedNews.Api.Models.NewsArticle
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using AutoMapper;
@@ -17,6 +18,8 @@
         public string Content { get; set; }
 
         public string Category { get; set; }
+
+        public ICollection<Image> Images { get; set; }
 
         public void CreateMappings(IConfiguration config)
         {

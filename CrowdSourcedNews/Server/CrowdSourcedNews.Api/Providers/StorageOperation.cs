@@ -12,6 +12,7 @@ namespace CrowdSourcedNews.Api.Providers
         private const string NonExistingFile = "File does not exist";
         private const string DownloadUnsuccessful = "Unsuccessful file download ";
         private const string UploadUnsuccessful = "File upload error: ";
+        internal const string ParentFolder = "WebNews";
 
 
         public static File CreateDirectory(DriveService service, string title, string description, string parent)
@@ -76,6 +77,29 @@ namespace CrowdSourcedNews.Api.Providers
             else
             {
                 Console.WriteLine(NonExistingFile);
+                return null;
+            }
+        }
+
+        public static File UploadFile(DriveService service, byte[] byteArr, string parent)
+        {
+            File body = new File
+            {
+                Title = "NewImage",
+                MimeType = "image/jpg",
+                Parents = new List<ParentReference>() { new ParentReference() { Id = parent } }
+            };
+
+            System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArr);
+            try
+            {
+                FilesResource.InsertMediaUpload request = service.Files.Insert(body, stream, "image/jpg");
+                request.Upload();
+                return request.ResponseBody;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(UploadUnsuccessful + e.Message);
                 return null;
             }
         }
