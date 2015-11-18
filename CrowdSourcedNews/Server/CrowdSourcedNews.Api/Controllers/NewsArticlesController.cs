@@ -71,7 +71,7 @@
 
             //var client = StorageAuthentication.GetUserCredentials();
             //DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
-            //var imagesCollection = model.Images;
+            var imagesCollection = model.Images;
 
             if (imagesCollection != null)
             {
