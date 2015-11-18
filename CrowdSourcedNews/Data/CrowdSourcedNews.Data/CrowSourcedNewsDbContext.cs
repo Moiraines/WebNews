@@ -17,6 +17,8 @@
 
         public virtual IDbSet<Comment> Comments { get; set; }
 
+        public virtual IDbSet<Category> Categories { get; set; }
+
         public static CrowdSourcedNewsDbContext Create()
         {
             return new CrowdSourcedNewsDbContext();

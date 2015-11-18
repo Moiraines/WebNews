@@ -11,7 +11,9 @@
         <div class="col-md-4" style="text-align: center">
             <div class="container-fluid">
                 <label for="category-options">Choose category:</label>
-                <input type="text" placeholder="Category" ng-model="category"/>
+                <select class="form-control" id="category-options" ng-model="category">
+                    <option ng-repeat="category in categories" value='{{category.Name}}'>{{category.Name}}</option>
+                </select>
                 <!--<select class="form-control" id="category-options"></select>-->
                 <button class="btn btn-success" id="show-form-btn" ng-click="getArticlesByCategory()">Show</button>
             </div>
@@ -30,9 +32,12 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <ul>
-                <li ng-repeat="article in articles">{{article.Name}}</li>
-            </ul>
+            <div ng-repeat="article in articles" style="display: inline-block; width: 100%; text-align: center">
+                <h3><a href="#/NewsArticles/details/{{article.Id}}">{{article.Name}}</a></h3> Author: {{article.Author}}
+                <br />
+                <img src="../../imgs/default.jpg" style="width: 200px; height: 120px; float: left"/>
+                <p style="float: right">{{article.Content}}</p>
+            </div>
         </div>
         <div class="col-md-4"></div>
     </div>

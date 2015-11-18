@@ -11,8 +11,10 @@
                 <input id="tb-content" class="form form-control" placeholder="Content" ng-model="data.Content">
             </div>
             <div class="form-group">
-                <label for="tb-content">Category: </label>
-                <input id="tb-content" class="form form-control" placeholder="Category" ng-model="data.Category">
+                <label for="category-options">Category:</label>
+                <select class="form-control" id="category-options" ng-model="data.CategoryId">
+                    <option ng-repeat="category in categories" value="{{category.Id}}" >{{category.Name}}</option>
+                </select>
             </div>
             <button id="btn-add" class="btn btn-info col-sm-2" ng-click="add()">Add</button>
         </div>

@@ -10,16 +10,18 @@
     using Google.Apis.Drive.v2;
     using Providers;
     using Models.Comment;
+    using System.Web.Http.Cors;
 
     public class NewsArticlesController : ApiController
     {
         private readonly INewsArticlesService newsArticles;
+        private const int PageSize = 10;
 
         public NewsArticlesController(INewsArticlesService newsArticles)
         {
             this.newsArticles = newsArticles;
         }
-
+        
         public IHttpActionResult Get()
         {
             var result = this.newsArticles
@@ -40,7 +42,8 @@
         {
             var result = this.newsArticles
                 .All()
-                .Where(a => a.Category.ToLower() == category.ToLower())
+                .Where(a => a.Category.Name.ToLower() == category.ToLower())
+                .ProjectTo<NewsArticleResponseModel>()
                 .ToList();
 
             if (result.Count == 0)
@@ -53,17 +56,9 @@
 
         public IHttpActionResult Get(int id)
         {
-            var result = this.newsArticles.All()
-                .Where(ar => ar.Id == id)
-                .ProjectTo<NewsArticleResponseModel>()
-                .FirstOrDefault();
+            var article = this.newsArticles.All().ProjectTo<NewsArticleResponseModel>().FirstOrDefault(a => a.Id == id);
 
-            if (result == null)
-            {
-                return this.NotFound();
-            }
-
-            return this.Ok(result);
+            return Ok(article);
         }
 
         [Authorize]
@@ -74,7 +69,9 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var imagesCollection = model.Images;
+            //var client = StorageAuthentication.GetUserCredentials();
+            //DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
+            //var imagesCollection = model.Images;
 
             if (imagesCollection != null)
             {
@@ -97,7 +94,7 @@
             //}
 
             var dataModel = Mapper.Map<NewsArticle>(model);
-
+            
             var newArticleId = this.newsArticles.Add(dataModel, this.User.Identity.Name);
 
             return this.Ok(newArticleId);
