@@ -16,6 +16,18 @@
         return deferred.promise;
     }
 
+    function getById(id) {
+        var deferred = $q.defer();
+        var urlA = url + '/' + id;
+        $http.get(urlA).then(function (response) {
+            deferred.resolve(response);
+        }, function (error) {
+            deferred.reject(error);
+        })
+
+        return deferred.promise;
+    }
+
     function getAllCategories() {
         var deferred = $q.defer();
 
@@ -45,6 +57,7 @@
     return {
         getAllNewsArticles: getAllNewsArticles,
         getArticlesByCategory: getArticlesByCategory,
-        getAllCategories: getAllCategories
+        getAllCategories: getAllCategories,
+        getById: getById
     };
 });

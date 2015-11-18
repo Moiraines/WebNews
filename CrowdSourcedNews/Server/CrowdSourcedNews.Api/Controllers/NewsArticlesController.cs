@@ -53,16 +53,12 @@
             return this.Ok(result);
         }
 
-        //public IHttpActionResult Get(int id = 0)
-        //{
-        //    var articles = this.newsArticles.All()
-        //                                .Skip(PageSize * id)
-        //                                .Take(PageSize)
-        //                                .ProjectTo<NewsArticleResponseModel>()
-        //                                .ToList();
+        public IHttpActionResult Get(int id)
+        {
+            var article = this.newsArticles.All().ProjectTo<NewsArticleResponseModel>().FirstOrDefault(a => a.Id == id);
 
-        //    return Ok(articles);
-        //}
+            return Ok(article);
+        }
 
         [Authorize]
         public IHttpActionResult Post(NewsArticleRequestModel model)

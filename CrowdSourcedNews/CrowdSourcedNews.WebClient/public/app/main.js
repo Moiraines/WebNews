@@ -31,5 +31,9 @@ angular
             .when('/Contacts', {
                 templateUrl: '/app/Templates/ContactsTemplate.html',
             })
+            .when('/NewsArticles/details/:id', {
+                templateUrl: '/app/Templates/ArticleDetailsTemplate.html',
+                controller: 'ArticleDetailsController'
+            })
     })
 
