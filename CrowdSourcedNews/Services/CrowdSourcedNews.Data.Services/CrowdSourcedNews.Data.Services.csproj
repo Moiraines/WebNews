@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentsService.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
     <Compile Include="Contracts\INewsArticlesService.cs" />
     <Compile Include="NewsArticlesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

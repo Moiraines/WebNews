@@ -9,6 +9,7 @@
     using CrowdSourcedNews.Models;
     using Google.Apis.Drive.v2;
     using Providers;
+    using Models.Comment;
 
     public class NewsArticlesController : ApiController
     {
@@ -73,10 +74,13 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var client = StorageAuthentication.GetUserCredentials();
-            DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
-
             var imagesCollection = model.Images;
+
+            if (imagesCollection != null)
+            {
+                var client = StorageAuthentication.GetUserCredentials();
+                DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
+            }
 
             // the case when image files are uploaded and saved on server hdd (Article should be referenced)
             //foreach (var image in imagesCollection)

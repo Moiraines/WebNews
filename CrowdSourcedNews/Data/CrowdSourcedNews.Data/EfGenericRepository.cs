@@ -92,7 +92,12 @@
 
         public int SaveChanges()
         {
-            return this.Context.SaveChanges();
+            try {
+                return this.Context.SaveChanges();
+            } catch(Exception e)
+            {
+                throw e.InnerException;
+            }
         }
 
         public void Dispose()

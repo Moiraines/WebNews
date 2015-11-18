@@ -15,6 +15,7 @@
             this.comments = new HashSet<Comment>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]

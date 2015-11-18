@@ -1,9 +1,11 @@
 ﻿namespace CrowdSourcedNews.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Comment
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -12,10 +14,8 @@
         [Required]
         public string AuthorId { get; set; }
 
-        public User Author { get; set; }
-
+        public virtual User Author { get; set; }
+        
         public int SubCommentId { get; set; }
-
-        public virtual Comment SubComment { get; set; }
     }
 }

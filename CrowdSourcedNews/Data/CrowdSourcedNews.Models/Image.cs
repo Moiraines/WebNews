@@ -4,6 +4,7 @@
 
     public class Image
     {
+        [Key]
         public int Id { get; set; }
 
         [MaxLength(250)]
