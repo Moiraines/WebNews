@@ -268,6 +268,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\NewsArticlesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -285,6 +286,7 @@
     <Compile Include="Models\Account\SetPasswordBindingModel.cs" />
     <Compile Include="Models\Account\UserInfoViewModel.cs" />
     <Compile Include="Models\Account\UserLoginInfoViewModel.cs" />
+    <Compile Include="Models\Category\CategoriesResponseModel.cs" />
     <Compile Include="Providers\StorageAuthentication.cs" />
     <Compile Include="Models\Storage\StorageClient.cs" />
     <Compile Include="Providers\StorageOperation.cs" />
@@ -327,6 +329,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

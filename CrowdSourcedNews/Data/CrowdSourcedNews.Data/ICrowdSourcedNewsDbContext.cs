@@ -12,7 +12,9 @@ namespace CrowdSourcedNews.Data
         IDbSet<Image> Images { get; set; }
 
         IDbSet<Comment> Comments { get; set; }
-        
+
+        IDbSet<Category> Categories { get; set; }
+
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;

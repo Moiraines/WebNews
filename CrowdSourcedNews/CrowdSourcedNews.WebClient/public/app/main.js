@@ -28,10 +28,6 @@ angular
                 templateUrl: '/app/Templates/LoggedTemplate.html',
                 controller: 'LoggedController'
             })
-            .when('/AddArticle', {
-                templateUrl: '/app/Templates/AddNewsArticleTemplate.html',
-                //controller: 'LoggedController'
-            })
             .when('/Contacts', {
                 templateUrl: '/app/Templates/ContactsTemplate.html',
             })

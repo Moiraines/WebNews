@@ -2,6 +2,8 @@
 
     $scope.articles = [];
 
+    $scope.categories = [];
+
     $scope.getAllNewsArticles = function () {
 
         NewsArticlesProvider.getAllNewsArticles().then(function (response) {
@@ -10,6 +12,15 @@
     }
 
     $scope.getAllNewsArticles();
+
+    $scope.getAllCategories = function () {
+
+        NewsArticlesProvider.getAllCategories().then(function (response){
+            $scope.categories = response.data;
+        })
+    }
+
+    $scope.getAllCategories();
 
     $scope.getArticlesByCategory = function () {
         NewsArticlesProvider.getArticlesByCategory($scope.category).then(function (response) {
