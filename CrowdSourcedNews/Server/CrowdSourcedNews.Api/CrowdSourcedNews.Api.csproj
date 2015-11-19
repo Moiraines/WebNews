@@ -289,6 +289,7 @@
     <Compile Include="Models\Account\UserLoginInfoViewModel.cs" />
     <Compile Include="Models\Comment\CommentRequestModel.cs" />
     <Compile Include="Models\Category\CategoriesResponseModel.cs" />
+    <Compile Include="Models\Comment\CommentResponseModel.cs" />
     <Compile Include="Providers\StorageAuthentication.cs" />
     <Compile Include="Models\Storage\StorageClient.cs" />
     <Compile Include="Providers\StorageOperation.cs" />

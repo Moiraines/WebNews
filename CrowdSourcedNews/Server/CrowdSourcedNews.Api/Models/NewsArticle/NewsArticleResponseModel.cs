@@ -7,6 +7,7 @@
 
     using CrowdSourcedNews.Api.Infrastructure.Mappings;
     using CrowdSourcedNews.Models;
+    using Comment;
 
     public class NewsArticleResponseModel : IMapFrom<NewsArticle>, IHaveCustomMappings
     {
@@ -24,7 +25,7 @@
 
         public ICollection<Image> Images { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<CommentResponseModel> Comments { get; set; }
 
         public void CreateMappings(IConfiguration config)
         {

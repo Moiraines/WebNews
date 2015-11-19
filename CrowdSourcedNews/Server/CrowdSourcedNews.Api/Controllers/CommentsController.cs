@@ -31,7 +31,7 @@
 
             this.comments.SaveChanges();
 
-            return this.Ok(commentId);
+            return this.Ok("Comment added");
         }
     }
 }
