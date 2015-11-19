@@ -1,26 +1,22 @@
-#Team Work System
+#Team "Heracles"
 
 A team project for Telerik Software Academy 2015's Web Services and Cloud course.
 
-##Team "Heracles"
-
-##Team members:
-
+###Team members:
 *	Теодор Чолаков
 *	Иван Василев
 *	Константин Адаму
 *	Огнян Алексиев
 *	Любомир Йончев
 
-##Project:
-
+###Project:
 CrowdSourcedNews with web client
 
-##Class Diagram:
+###Class Diagram:
 
 <img src="images/ClassDiagram.jpg" />
 
-##DbDiagram:
+###DbDiagram:
 
 <img src="images/DbDiagram.jpg" />
 
@@ -36,10 +32,10 @@ A web application for posting News Articles, where one can:
 
 News Articles are stored in different categories.
 
-##The URL of source control repository is:
+###The URL of source control repository is:
 https://github.com/Moiraines/WebNews
 
-##Service url in Azure:
+###Service url in Azure:
 http://crowdsourcednews.azurewebsites.net/
 
 ### Additional Notes
