@@ -29,9 +29,7 @@
             
             model.AuthorId = currentUserId;
 
-            var article = this.newsArticles
-                .All()
-                .FirstOrDefault(a => a.Id == newsArticleId);
+            var article = this.newsArticles.GetById(newsArticleId);
 
             if(article == null)
             {
@@ -55,9 +53,7 @@
 
             model.AuthorId = currentUserId;
 
-            var comment = this.comments
-                .All()
-                .FirstOrDefault(c => c.Id == commentId);
+            var comment = this.comments.GetById(commentId);
 
             if(comment == null)
             {

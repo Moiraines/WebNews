@@ -21,7 +21,7 @@
         {
             this.newsArticles = newsArticles;
         }
-        
+
         public IHttpActionResult Get()
         {
             var result = this.newsArticles
@@ -94,10 +94,30 @@
             //}
 
             var dataModel = Mapper.Map<NewsArticle>(model);
-            
+
             var newArticleId = this.newsArticles.Add(dataModel, this.User.Identity.Name);
 
             return this.Ok(newArticleId);
+        }
+
+        [Authorize]
+        [Route("~/api/newsarticles/{id}/positive")]
+        [HttpPut]
+        public IHttpActionResult PositiveVote(int id)
+        {
+            this.newsArticles.PosiviteVote(id);
+
+            return this.Ok("Positive vote");
+        }
+
+        [Authorize]
+        [Route("~/api/newsarticles/{id}/negative")]
+        [HttpPut]
+        public IHttpActionResult NegativeVote(int id)
+        {
+            this.newsArticles.NegativeVote(id);
+
+            return this.Ok("Negative vote");
         }
     }
 }

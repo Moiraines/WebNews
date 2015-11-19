@@ -41,5 +41,32 @@
 
             return model.Id;
         }
+
+        public void PosiviteVote(int newsArticleId)
+        {
+            var article = this.newsArticles.GetById(newsArticleId);
+
+            article.PositiveVotes++;
+
+            this.newsArticles.Update(article);
+
+            this.SaveChanges();
+        }
+
+        public void NegativeVote(int newsArticleId)
+        {
+            var article = this.newsArticles.GetById(newsArticleId);
+
+            article.NegativeVotes++;
+
+            this.newsArticles.Update(article);
+
+            this.SaveChanges();
+        }
+
+        public int SaveChanges()
+        {
+            return this.newsArticles.SaveChanges();
+        }
     }
 }
