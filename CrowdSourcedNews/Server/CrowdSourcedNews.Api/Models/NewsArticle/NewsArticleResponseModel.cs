@@ -16,7 +16,7 @@
 
         public string Content { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
