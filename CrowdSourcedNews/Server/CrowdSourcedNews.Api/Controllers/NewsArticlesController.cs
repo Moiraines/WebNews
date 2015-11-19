@@ -103,7 +103,7 @@
 
             var newArticleId = this.newsArticles.Add(dataModel, this.User.Identity.Name);
 
-            this.pubnub.SendNotification("Channel-ar5zj97gz", string.Format("News article {0} created", dataModel.Name));
+            this.pubnub.SendNotification(Constants.PubnubChannelActivityFeed, string.Format("News article {0} created", dataModel.Name));
 
             return this.Ok(newArticleId);
         }
