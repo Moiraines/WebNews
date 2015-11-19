@@ -1,13 +1,10 @@
-﻿using CrowdSourcedNews.Data.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrowdSourcedNews.Models;
-
-namespace CrowdSourcedNews.Data.Services
+﻿namespace CrowdSourcedNews.Data.Services
 {
+    using System.Linq;
+
+    using CrowdSourcedNews.Data.Services.Contracts;
+    using CrowdSourcedNews.Models;
+
     public class CategoriesService : ICategoriesService
     {
         private readonly IRepository<Category> categories;
