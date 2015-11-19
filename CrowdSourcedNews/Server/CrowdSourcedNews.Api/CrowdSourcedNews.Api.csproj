@@ -327,6 +327,10 @@
       <Project>{015b09ab-4ed8-485c-adcd-849c23231cf3}</Project>
       <Name>CrowdSourcedNews.Data.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\CrowdSourcedNews.Notification.Services\CrowdSourcedNews.Notification.Services.csproj">
+      <Project>{bb7ef08a-d0c0-417f-b1ac-c226b7213f84}</Project>
+      <Name>CrowdSourcedNews.Notification.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

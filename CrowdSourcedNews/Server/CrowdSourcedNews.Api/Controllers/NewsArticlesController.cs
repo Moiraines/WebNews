@@ -11,15 +11,21 @@
     using Providers;
     using Models.Comment;
     using System.Web.Http.Cors;
+    using Notification.Services;
+    using Common;
 
     public class NewsArticlesController : ApiController
     {
-        private readonly INewsArticlesService newsArticles;
         private const int PageSize = 10;
 
-        public NewsArticlesController(INewsArticlesService newsArticles)
+        private readonly INewsArticlesService newsArticles;
+        private readonly IPubnubBroadcaster pubnub;
+
+
+        public NewsArticlesController(INewsArticlesService newsArticles, IPubnubBroadcaster pubnub)
         {
             this.newsArticles = newsArticles;
+            this.pubnub = pubnub;
         }
 
         public IHttpActionResult Get()
@@ -96,6 +102,8 @@
             var dataModel = Mapper.Map<NewsArticle>(model);
 
             var newArticleId = this.newsArticles.Add(dataModel, this.User.Identity.Name);
+
+            this.pubnub.SendNotification("Channel-ar5zj97gz", string.Format("News article {0} created", dataModel.Name));
 
             return this.Ok(newArticleId);
         }

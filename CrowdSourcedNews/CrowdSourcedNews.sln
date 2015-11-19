@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{5DFB2E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdSourcedNews.WebClient", "CrowdSourcedNews.WebClient\CrowdSourcedNews.WebClient.csproj", "{E8271FAC-E42E-4A2C-A946-1CF5B2CC73EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowdSourcedNews.Notification.Services", "Services\CrowdSourcedNews.Notification.Services\CrowdSourcedNews.Notification.Services.csproj", "{BB7EF08A-D0C0-417F-B1AC-C226B7213F84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{E8271FAC-E42E-4A2C-A946-1CF5B2CC73EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8271FAC-E42E-4A2C-A946-1CF5B2CC73EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8271FAC-E42E-4A2C-A946-1CF5B2CC73EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB7EF08A-D0C0-417F-B1AC-C226B7213F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7EF08A-D0C0-417F-B1AC-C226B7213F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7EF08A-D0C0-417F-B1AC-C226B7213F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7EF08A-D0C0-417F-B1AC-C226B7213F84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{015B09AB-4ED8-485C-ADCD-849C23231CF3} = {BF37B9A9-3BAF-4A1A-9493-C30AD1A9D0CB}
 		{35AF31FD-55EB-4343-AD26-63987FD0A24E} = {9CC1326B-376D-411C-85C2-8CB23F3B89AB}
 		{E8271FAC-E42E-4A2C-A946-1CF5B2CC73EB} = {5DFB2EB0-C367-448B-9467-D762D9E32702}
+		{BB7EF08A-D0C0-417F-B1AC-C226B7213F84} = {BF37B9A9-3BAF-4A1A-9493-C30AD1A9D0CB}
 	EndGlobalSection
 EndGlobal

@@ -16,6 +16,7 @@ namespace CrowdSourcedNews.Api
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Extensions.Conventions;
+    using Notification.Services;
 
     public static class NinjectConfig 
     {
@@ -68,6 +69,7 @@ namespace CrowdSourcedNews.Api
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICrowdSourcedNewsDbContext>().To<CrowdSourcedNewsDbContext>().InRequestScope();
+            kernel.Bind(typeof(IPubnubBroadcaster)).To<PubnubBroadcaster>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
             kernel.Bind(x => x.From(Assemblies.DataServices).SelectAllClasses().BindDefaultInterface());
         }        
