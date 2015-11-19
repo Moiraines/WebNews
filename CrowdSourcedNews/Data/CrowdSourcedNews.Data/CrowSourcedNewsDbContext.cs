@@ -7,7 +7,7 @@
     public class CrowdSourcedNewsDbContext : IdentityDbContext<User>, ICrowdSourcedNewsDbContext
     {
         public CrowdSourcedNewsDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureConnection", throwIfV1Schema: false)
         {
         }
 
