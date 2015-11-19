@@ -13,6 +13,8 @@ namespace CrowdSourcedNews.Data.Services.Contracts
 
         int Add(int newsArticleId, Comment model, string username);
 
+        int AddSubComment(int commentId, Comment model, string username);
+
         int SaveChanges();
     }
 }

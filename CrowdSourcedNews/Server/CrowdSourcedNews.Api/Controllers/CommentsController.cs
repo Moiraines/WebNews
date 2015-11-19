@@ -14,7 +14,7 @@
         {
             this.comments = comments;
         }
-
+        
         [Authorize]
         [Route("~/api/newsarticles/comments/{id}")]
         [HttpPost]
@@ -29,9 +29,24 @@
 
             var commentId = this.comments.Add(id ,dataModel, this.User.Identity.Name);
 
-            this.comments.SaveChanges();
+            return this.Ok(commentId);
+        }
 
-            return this.Ok("Comment added");
+        [Authorize]
+        [Route("~/api/comments/{id}")]
+        [HttpPost]
+        public IHttpActionResult PostSubComment(int id, [FromBody]CommentRequestModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var dataModel = Mapper.Map<Comment>(model);
+
+            var commentId = this.comments.AddSubComment(id, dataModel, this.User.Identity.Name);
+
+            return this.Ok(commentId);
         }
     }
 }

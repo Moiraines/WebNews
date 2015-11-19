@@ -41,6 +41,33 @@
             this.comments.Add(model);
             article.Comments.Add(model);
 
+            this.SaveChanges();
+
+            return model.Id;
+        }
+
+        public int AddSubComment(int commentId, Comment model, string username)
+        {
+            var currentUserId = this.users.All()
+               .Where(u => u.UserName == username)
+               .Select(u => u.Id)
+               .First();
+
+            model.AuthorId = currentUserId;
+
+            var comment = this.comments
+                .All()
+                .FirstOrDefault(c => c.Id == commentId);
+
+            if(comment == null)
+            {
+                throw new ArgumentException("Comment cannot be found!");
+            }
+
+            comment.SubComments.Add(model);
+
+            this.SaveChanges();
+
             return model.Id;
         }
 
