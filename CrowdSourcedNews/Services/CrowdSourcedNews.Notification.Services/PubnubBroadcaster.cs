@@ -8,8 +8,12 @@
         private readonly Pubnub pubnubClient;
 
         public PubnubBroadcaster()
+            :this(Constants.PubnubPublishKey, Constants.PubnubSubscribeKey)
+        { }
+
+        public PubnubBroadcaster(string publishKey, string subscribeKey)
         {
-            pubnubClient = new Pubnub(Constants.PubnubPublishKey, Constants.PubnubSubscribeKey);
+            pubnubClient = new Pubnub(publishKey, subscribeKey);
         }
 
         public void SendNotification(string channel, string message)
