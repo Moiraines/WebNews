@@ -1,12 +1,9 @@
-﻿using CrowdSourcedNews.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CrowdSourcedNews.Data.Services.Contracts
+﻿namespace CrowdSourcedNews.Data.Services.Contracts
 {
+    using System.Linq;
+
+    using CrowdSourcedNews.Models;
+
     public interface ICommentsService
     {
         IQueryable<Comment> All();

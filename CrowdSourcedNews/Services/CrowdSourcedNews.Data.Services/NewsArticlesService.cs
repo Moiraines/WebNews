@@ -42,7 +42,7 @@
             return model.Id;
         }
 
-        public void PosiviteVote(int newsArticleId)
+        public void PositiveVote(int newsArticleId)
         {
             var article = this.newsArticles.GetById(newsArticleId);
 

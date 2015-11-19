@@ -113,7 +113,7 @@
         [HttpPut]
         public IHttpActionResult PositiveVote(int id)
         {
-            this.newsArticles.PosiviteVote(id);
+            this.newsArticles.PositiveVote(id);
 
             return this.Ok("Positive vote");
         }

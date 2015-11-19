@@ -21,15 +21,14 @@
 
         public int NegativeVotes { get; set; }
 
-        public int CategoryId { get; set; }
-
-        public virtual Category Category { get; set; }
+        public int? CategoryId { get; set; }
 
         public ICollection<Image> Images { get; set; }
 
         public void CreateMappings(IConfiguration config)
         {
-            config.CreateMap<NewsArticleRequestModel, NewsArticle>().ForMember(p => p.CreatedOn, opts => opts.UseValue(DateTime.Now));
+            config.CreateMap<NewsArticleRequestModel, NewsArticle>()
+                .ForMember(p => p.CreatedOn, opts => opts.UseValue(DateTime.Now));
         }
     }
 }

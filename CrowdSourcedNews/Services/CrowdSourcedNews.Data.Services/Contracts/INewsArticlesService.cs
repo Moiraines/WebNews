@@ -1,7 +1,8 @@
 ﻿namespace CrowdSourcedNews.Data.Services.Contracts
 {
-    using Models;
     using System.Linq;
+
+    using Models;
 
     public interface INewsArticlesService
     {
@@ -9,7 +10,7 @@
 
         int Add(NewsArticle model, string username);
 
-        void PosiviteVote(int newsArticleId);
+        void PositiveVote(int newsArticleId);
 
         void NegativeVote(int newsArticleId);
 

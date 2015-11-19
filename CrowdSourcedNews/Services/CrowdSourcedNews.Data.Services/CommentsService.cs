@@ -31,7 +31,7 @@
 
             var article = this.newsArticles.GetById(newsArticleId);
 
-            if(article == null)
+            if (article == null)
             {
                 throw new ArgumentException("News article cannot be found!");
             }
@@ -55,7 +55,7 @@
 
             var comment = this.comments.GetById(commentId);
 
-            if(comment == null)
+            if (comment == null)
             {
                 throw new ArgumentException("Comment cannot be found!");
             }
