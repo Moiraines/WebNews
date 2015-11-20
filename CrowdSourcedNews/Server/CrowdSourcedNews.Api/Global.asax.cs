@@ -1,10 +1,9 @@
 ﻿namespace CrowdSourcedNews.Api
 {
     using System.Reflection;
-
-    using App_Start;
     using System.Web.Http;
 
+    using App_Start;    
     using CrowdSourcedNews.Common;
 
     public class WebApiApplication : System.Web.HttpApplication

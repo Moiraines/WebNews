@@ -3,7 +3,6 @@
     using System.ComponentModel.DataAnnotations;
 
     // Models used as parameters to AccountController actions.
-
     public class AddExternalLoginBindingModel
     {
         [Required]

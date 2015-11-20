@@ -25,8 +25,7 @@ namespace CrowdSourcedNews.Data.Migrations
                   new Category { Name = "Economy" },
                   new Category { Name = "Education" },
                   new Category { Name = "Health" },
-                  new Category { Name = "Celebrity" }
-                  );
+                  new Category { Name = "Celebrity" });
         }
     }
 }

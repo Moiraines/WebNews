@@ -1,8 +1,9 @@
 ﻿namespace CrowdSourcedNews.Api.Models.Comment
 {
-    using Infrastructure.Mappings;
-    using CrowdSourcedNews.Models;
     using System.ComponentModel.DataAnnotations;
+
+    using CrowdSourcedNews.Models;
+    using Infrastructure.Mappings;     
 
     public class CommentRequestModel : IMapFrom<Comment>
     {

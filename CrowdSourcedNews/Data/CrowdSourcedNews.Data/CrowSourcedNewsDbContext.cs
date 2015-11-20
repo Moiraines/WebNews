@@ -1,8 +1,8 @@
 ﻿namespace CrowdSourcedNews.Data
 {
-    using CrowdSourcedNews.Models;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using System.Data.Entity;
+    using CrowdSourcedNews.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;  
 
     public class CrowdSourcedNewsDbContext : IdentityDbContext<User>, ICrowdSourcedNewsDbContext
     {

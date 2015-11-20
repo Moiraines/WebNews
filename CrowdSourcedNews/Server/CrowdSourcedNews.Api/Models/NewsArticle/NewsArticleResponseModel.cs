@@ -4,11 +4,10 @@
     using System.Collections.Generic;
 
     using AutoMapper;
-
-    using CrowdSourcedNews.Api.Infrastructure.Mappings;
-    using CrowdSourcedNews.Models;
     using Comment;
-
+    using CrowdSourcedNews.Api.Infrastructure.Mappings;
+    using CrowdSourcedNews.Models; 
+    
     public class NewsArticleResponseModel : IMapFrom<NewsArticle>, IHaveCustomMappings
     {
         public int Id { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace CrowdSourcedNews.Common
 {
-    public class Constants
+    public class NotifyConstants
     {
         public const string PubnubPublishKey = "pub-c-8cc9f97d-59fa-413a-8ca3-4c7e96301ffc";
 

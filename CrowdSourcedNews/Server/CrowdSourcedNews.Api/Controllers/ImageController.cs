@@ -1,9 +1,9 @@
-﻿using System.Web.Http;
-using CrowdSourcedNews.Api.Providers;
-using Google.Apis.Drive.v2;
-
-namespace CrowdSourcedNews.Api.Controllers
+﻿namespace CrowdSourcedNews.Api.Controllers
 {
+    using System.Web.Http;
+    using CrowdSourcedNews.Api.Providers;
+    using Google.Apis.Drive.v2;
+
     public class ImageController : ApiController
     {
         public IHttpActionResult Get()
@@ -11,8 +11,8 @@ namespace CrowdSourcedNews.Api.Controllers
             var client = StorageAuthentication.GetUserCredentials();
             DriveService service = StorageAuthentication.AuthenticateOauth(client.ClientId, client.ClientSecret, "root");
 
-            string Q = "mimeType = 'application/vnd.google-apps.photo'";
-            var newsPictures = StorageOperation.GetFiles(service, Q);
+            string q = "mimeType = 'application/vnd.google-apps.photo'";
+            var newsPictures = StorageOperation.GetFiles(service, q);
 
             return this.Ok(newsPictures);
         }

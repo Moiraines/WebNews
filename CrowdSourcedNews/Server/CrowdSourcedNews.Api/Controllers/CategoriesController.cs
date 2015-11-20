@@ -1,16 +1,12 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using CrowdSourcedNews.Api.Models.Category;
-using CrowdSourcedNews.Data.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-
-namespace CrowdSourcedNews.Api.Controllers
+﻿namespace CrowdSourcedNews.Api.Controllers
 {
+    using System.Linq;
+    using System.Web.Http;
+
+    using AutoMapper.QueryableExtensions;
+    using CrowdSourcedNews.Api.Models.Category;
+    using CrowdSourcedNews.Data.Services.Contracts;  
+
     public class CategoriesController : ApiController
     {
         private readonly ICategoriesService categories;

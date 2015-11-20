@@ -1,10 +1,11 @@
 ﻿namespace CrowdSourcedNews.Api.Controllers
 {
-    using AutoMapper;
-    using Data.Services.Contracts;
-    using CrowdSourcedNews.Models;
-    using Models.Comment;
     using System.Web.Http;
+
+    using AutoMapper;
+    using CrowdSourcedNews.Models;
+    using Data.Services.Contracts;  
+    using Models.Comment;   
 
     public class CommentsController : ApiController
     {
@@ -27,7 +28,7 @@
 
             var dataModel = Mapper.Map<Comment>(model);
 
-            var commentId = this.comments.Add(id ,dataModel, this.User.Identity.Name);
+            var commentId = this.comments.Add(id, dataModel, this.User.Identity.Name);
 
             return this.Ok(commentId);
         }
