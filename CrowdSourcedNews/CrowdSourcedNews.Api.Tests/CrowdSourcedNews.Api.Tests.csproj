@@ -109,6 +109,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ControllerTests\NewsArticlesControllerTests.cs" />
+    <Compile Include="RouteTests\NewsArticlesControllerRouteTests.cs" />
     <Compile Include="Setups\Repositories.cs" />
     <Compile Include="Setups\Services.cs" />
     <Compile Include="TestInitialize.cs" />
@@ -144,9 +145,7 @@
       <Name>CrowdSourcedNews.Notification.Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RouteTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
