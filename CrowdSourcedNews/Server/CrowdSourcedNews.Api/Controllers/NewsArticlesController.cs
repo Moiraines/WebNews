@@ -46,6 +46,11 @@
 
         public IHttpActionResult Get(string category)
         {
+            if (string.IsNullOrEmpty(category))
+            {
+                return this.BadRequest("Category name cannot be null or empty.");
+            }
+
             var result = this.newsArticles
                 .All()
                 .Where(a => a.Category.Name.ToLower() == category.ToLower())
@@ -64,7 +69,12 @@
         {
             var article = this.newsArticles.All().ProjectTo<NewsArticleResponseModel>().FirstOrDefault(a => a.Id == id);
 
-            return Ok(article);
+            if (article == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Ok(article);
         }
 
         [Authorize]
