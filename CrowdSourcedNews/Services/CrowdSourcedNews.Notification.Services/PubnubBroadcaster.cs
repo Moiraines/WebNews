@@ -8,7 +8,7 @@
         private readonly Pubnub pubnubClient;
 
         public PubnubBroadcaster()
-            :this(Constants.PubnubPublishKey, Constants.PubnubSubscribeKey)
+            :this(NotifyConstants.PubnubPublishKey, NotifyConstants.PubnubSubscribeKey)
         { }
 
         public PubnubBroadcaster(string publishKey, string subscribeKey)

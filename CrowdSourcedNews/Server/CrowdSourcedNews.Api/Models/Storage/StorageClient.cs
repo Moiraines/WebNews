@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-
-namespace CrowdSourcedNews.Api.Models.Storage
+﻿namespace CrowdSourcedNews.Api.Models.Storage
 {
+    using Newtonsoft.Json;
+
     public class StorageClient
     {
         [JsonProperty("client_id")]

@@ -19,12 +19,14 @@ namespace PubNubMessaging.Core
 		private static bool _machineSuspendMode = false;
 
 		private static IJsonPluggableLibrary _jsonPluggableLibrary;
+
 		internal static IJsonPluggableLibrary JsonPluggableLibrary
 		{
 			get
 			{
 				return _jsonPluggableLibrary;
 			}
+
 			set
 			{
 				_jsonPluggableLibrary = value;
@@ -336,4 +338,3 @@ namespace PubNubMessaging.Core
 	}
 	#endregion
 }
-

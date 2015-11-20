@@ -1,13 +1,8 @@
-﻿using CrowdSourcedNews.Api.Infrastructure.Mappings;
-using CrowdSourcedNews.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-
-namespace CrowdSourcedNews.Api.Models.Category
+﻿namespace CrowdSourcedNews.Api.Models.Category
 {
+    using AutoMapper;
+    using CrowdSourcedNews.Api.Infrastructure.Mappings; 
+
     public class CategoriesResponseModel : IMapFrom<CrowdSourcedNews.Models.Category>, IHaveCustomMappings
     {
         public int Id { get; set; }

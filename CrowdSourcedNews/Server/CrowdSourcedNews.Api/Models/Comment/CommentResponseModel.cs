@@ -1,11 +1,11 @@
 ﻿namespace CrowdSourcedNews.Api.Models.Comment
 {
-    using Infrastructure.Mappings;
-    using CrowdSourcedNews.Models;
     using System.Collections.Generic;
-    using AutoMapper;
-    using System;
 
+    using AutoMapper;
+    using CrowdSourcedNews.Models;     
+    using Infrastructure.Mappings;
+    
     public class CommentResponseModel : IMapFrom<NewsArticle>, IHaveCustomMappings
     {
         public int Id { get; set; }

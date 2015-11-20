@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-
-namespace CrowdSourcedNews.Models
+﻿namespace CrowdSourcedNews.Models
 {
+    using System.Collections.Generic;
+
     public class Category
     {
         private ICollection<NewsArticle> newsArticles;

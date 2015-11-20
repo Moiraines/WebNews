@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
-using Owin;
-
-using Ninject.Web.Common;
-using Ninject.Web.WebApi;
+﻿using Microsoft.Owin;
 
 [assembly: OwinStartup(typeof(CrowdSourcedNews.Api.Startup))]
 
 namespace CrowdSourcedNews.Api
 {
-    using System.Web.Http;
+    using Owin;
 
     public partial class Startup
     {

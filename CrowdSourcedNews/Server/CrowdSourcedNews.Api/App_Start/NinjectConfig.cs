@@ -9,18 +9,16 @@ namespace CrowdSourcedNews.Api
     using System.Web;
 
     using CrowdSourcedNews.Common;
-    using CrowdSourcedNews.Data;
-
+    using CrowdSourcedNews.Data;   
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
+    using Ninject;  
     using Ninject.Extensions.Conventions;
-    using Notification.Services;
+    using Ninject.Web.Common;
+    using Notification.Services;   
 
     public static class NinjectConfig 
     {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+        private static readonly Bootstrapper Bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
@@ -29,7 +27,7 @@ namespace CrowdSourcedNews.Api
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            bootstrapper.Initialize(CreateKernel);
+            Bootstrapper.Initialize(CreateKernel);
         }
         
         /// <summary>
@@ -37,7 +35,7 @@ namespace CrowdSourcedNews.Api
         /// </summary>
         public static void Stop()
         {
-            bootstrapper.ShutDown();
+            Bootstrapper.ShutDown();
         }
         
         /// <summary>
